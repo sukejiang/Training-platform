@@ -15,6 +15,8 @@ class My():
         self.driver.find_element(By.ID,'txtpassword').send_keys("jqf123456")
         self.driver.find_element(By.ID,"btnLogin").click()
         self.driver.get_screenshot_as_file("./截图保存的信息/登录页面的信息.png")
+
+
     def addInstitutions(self):  #完成新增机构功能(脚本运行时间9秒)
         self.driver.find_element(By.XPATH,'//*[@id="navigator"]/ul/li[2]').click() #获取机构管理页面
         elementi = self.driver.find_element(By.XPATH,'/html/body/div[1]/div[2]/div[2]/iframe')
@@ -27,7 +29,7 @@ class My():
         self.driver.find_element(By.XPATH,'//*[@id="dlgOrganization"]/div[3]/a[2]').click() #确定新增机构
         time.sleep(1)
         self.driver.get_screenshot_as_file("./截图保存的信息/自动添加机构.png")
-        time.sleep(10)
+        self.driver.quit()
     def run(self):
         self.login()
         self.driver.implicitly_wait(3)
