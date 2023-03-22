@@ -6,7 +6,7 @@ class My():  #完成新增用户操作
     def __init__(self):
         self.driver = webdriver.Chrome()
 
-    def login(self):  # 获取登录页面并截图保存
+    def login(self):  # 获取登录页面
         self.driver.get("https://dev.znk.group/training/manage.htm")
         self.driver.maximize_window()
         self.driver.find_element(By.ID,'txtuserid').send_keys("江啟锋")
