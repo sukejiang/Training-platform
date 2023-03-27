@@ -2,7 +2,6 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 import time
 import os
-import json
 class My():
     def __init__(self):
         self.driver = webdriver.Chrome()
@@ -21,7 +20,7 @@ class My():
         element = self.driver.find_element(By.XPATH, '/html/body/div[1]/div[2]/div[2]/iframe')
         self.driver.switch_to.frame(element)  # 跳转到标签页
         self.driver.find_element(By.XPATH,'/html/body/div[1]/div/div[1]/div[6]').click() #点击导入按钮
-        self.driver.find_element(By.XPATH,'//*[@id="select_btn_1"]').send_keys(os.path.abspath('./Management side/导入的信息数据/教师导入.xls')) #点击上传按钮
+        self.driver.find_element(By.XPATH,'//*[@id="select_btn_1"]').send_keys(os.path.abspath('./导入的信息数据/教师导入.xls')) #点击上传按钮
         time.sleep(1)
         self.driver.get_screenshot_as_file('./截图保存的信息/自动导入教师.png')
         self.driver.quit()
